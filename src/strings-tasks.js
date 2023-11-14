@@ -42,8 +42,12 @@ function getStringLength(value) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
+function isString(value) {
+  if (!value && value !== '') {
+    return false;
+  }
+
+  return typeof value.valueOf() === 'string';
 }
 
 /**
